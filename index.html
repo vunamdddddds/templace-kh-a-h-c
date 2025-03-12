@@ -1,390 +1,320 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    
-    <header class="bg-red-700 flex items-center justify-between px-4 py-2">
-        <!-- Logo -->
-        <div>
-            <img src="/img/Annotation 2025-03-05 171514.png" alt="Logo" class="w-10 h-10">
-        </div>
-        
-        <!-- Thanh tìm kiếm -->
-        <div class="relative w-1/3">
-            <input type="text" placeholder="Tìm kiếm..." class="w-full px-4 py-2 rounded-full">
-            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-1 rounded-full">
-                🔍
-            </button>
-        </div>
-        
-        <!-- Icon giỏ hàng, ngôn ngữ, user -->
-        <div class="flex items-center space-x-4 text-white">
-            <button>🛒</button>
-            <button class="flex items-center space-x-1" id="language-toggle">
-                <span id="flag"><img width="20px" src="/img/Flag_of_Vietnam.svg.png" alt=""></span>
-                <span id="language-text">VI</span>
-            </button>
-            <button>⚪</button>
-        </div>
-    </header>
-    <section class="bg-gray-200  px-4 flex items-center">
-        <span>🔔</span>
-        <p class="ml-2 text-sm">working with the Vietnam E-commerce and Digital Economy Agency and the Ministry of Industry and Trade to register its provision of e-commerce services in Vietnam.</p>
-    </section>
-    
-    <section class="px-4 items-center">
-        <img class="w-full" src="/img/Banner.png" alt="">
-      </section>
-
-      
-      <section class="px-4 flex justify-center">
-        <img class="w-full max-w-[1234px] " src="/img/Annotation 2025-03-05 175925.png" alt="">
-      </section>
-      
-      <div class="relative w-full flex items-center">
-
-        <style>
-            #scroll-container::-webkit-scrollbar {
-              display: none; /* Ẩn thanh cuộn trên Chrome, Safari */
-            }
-          
-            #scroll-container {
-              -ms-overflow-style: none; /* Ẩn thanh cuộn trên IE, Edge */
-              scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
-            }
-          </style>
-          
-        <!-- Nút cuộn trái -->
-        <button id="scroll-left" class="absolute left-0 z-10 p-2 bg-gray-300 rounded-full shadow-md">
-            <img width="12px" src="https://www.pngkey.com/png/detail/302-3026664_keyboard-left-arrow-button-vector-left-arrow-key.png" alt="Keyboard Left Arrow Button Vector - Left Arrow Key Png@pngkey.com">   
-        </button>
-      
-        <!-- Danh sách môn học -->
-        <div id="scroll-container" class="flex space-x-3 overflow-x-auto p-4 scroll-smooth whitespace-nowrap mx-10">
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">BackEnd</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">ReactJs</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Python</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">C/C++ Pro</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">DSA</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Node Js</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Spring</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Machine Learning</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Responsive</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">AI</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Data Science</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Cyber Security</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Fullstack Dev</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Mobile Dev</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full text-black">Cloud Computing</span>
-        </div>
-      
-        <!-- Nút cuộn phải -->
-        <button id="scroll-right" class="absolute right-0 z-10 p-2 bg-gray-300 rounded-full shadow-md">
-            <img width="12px" src="https://www.pngkey.com/png/detail/192-1929122_right-arrow-scroll-right-arrow-icon.png" alt="Right Arrow - - Scroll Right Arrow Icon@pngkey.com">
-        </button>
-      </div>
-      
-      <script>
-        const container = document.getElementById("scroll-container");
-        const btnLeft = document.getElementById("scroll-left");
-        const btnRight = document.getElementById("scroll-right");
-      
-        btnLeft.addEventListener("click", () => {
-          container.scrollBy({ left: -200, behavior: "smooth" });
-        });
-      
-        btnRight.addEventListener("click", () => {
-          container.scrollBy({ left: 200, behavior: "smooth" });
-        });
-      </script>
-      
-       
-      
-
-
-    <script>
-        document.getElementById("language-toggle").addEventListener("click", function() {
-            const langText = document.getElementById("language-text");
-            const flag = document.getElementById("flag");
-            if (langText.innerText === "VI") {
-                langText.innerText = "EN";
-                flag.innerHTML = '<img width="20px" src="/img/Flag_of_the_United_Kingdom_(1-2).svg.webp" alt="">';
-            } else {
-                langText.innerText = "VI";
-                flag.innerHTML = '<img width="20px" src="/img/Flag_of_Vietnam.svg.png" alt="">';
-            }
-        });
-    </script>
- 
-    
-
-
-<div class="danh sách khóa học"> 
+    <title>Trang chủ - Học Lập trình Online</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #258e01;
+            --secondary-color: #1a1a1a;
         }
-
-        .course-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
         }
-
-        .course-card {
-            width: 200px;
-            background-color: #f5f5f5;
-            border-radius: 8px;
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        .nav-link {
+            color: #333 !important;
+            margin: 0 15px;
+            position: relative;
+            font-weight: 500;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero {
+            height: 80vh;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('/img/image.png') center/cover ;
+                      
         }
-
-        .course-card:hover {
-            transform: scale(1.05);
-        }
-
-        .course-image {
-            width: 100%;
-            height: 120px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .course-content {
-            padding: 10px;
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-        }
-
-        .course-title {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .course-desc {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .course-price {
-            font-size: 14px;
-            font-weight: bold;
-            color: #e91e63;
-        }
-    </style>
- </head>
- <body>
-
-    <div class="course-container" id="course-list">
-        <!-- Các khóa học sẽ được thêm vào đây bằng JavaScript -->
-    </div>
-
-    <script>
-        const courses = [
-            { title: "HTML, CSS Pro", desc: "Cho người mới bắt đầu", price: "13.297 vnd", image: "https://via.placeholder.com/200x120/0000FF/FFFFFF?text=HTML+CSS" },
-            { title: "JavaScript Pro", desc: "Cho người mới bắt đầu", price: "193.297 vnd", image: "https://via.placeholder.com/200x120/FFD700/000000?text=JavaScript" },
-            { title: "Từ cơ bản đến nâng cao", desc: "Lập trình C++", price: "20.000 vnd", image: "https://via.placeholder.com/200x120/00FFFF/000000?text=C%2B%2B" },
-            { title: "WSL Ubuntu", desc: "Làm việc với Terminal & Ubuntu", price: "19.297 vnd", image: "https://via.placeholder.com/200x120/FF4500/FFFFFF?text=WSL+Ubuntu" },
-            { title: "Node & ExpressJS", desc: "Node & ExpressJS", price: "324.297 vnd", image: "https://via.placeholder.com/200x120/008000/FFFFFF?text=Node.js" },
-            { title: "Ngôn ngữ Sass", desc: "Responsive với Grid System", price: "32.297 vnd", image: "https://via.placeholder.com/200x120/FF69B4/FFFFFF?text=Sass" },
-            { title: "HTML, CSS Pro", desc: "Cho người mới bắt đầu", price: "13.297 vnd", image: "https://via.placeholder.com/200x120/0000FF/FFFFFF?text=HTML+CSS" },
-            { title: "JavaScript Pro", desc: "Cho người mới bắt đầu", price: "193.297 vnd", image: "https://via.placeholder.com/200x120/FFD700/000000?text=JavaScript" },
-            { title: "Từ cơ bản đến nâng cao", desc: "Lập trình C++", price: "20.000 vnd", image: "https://via.placeholder.com/200x120/00FFFF/000000?text=C%2B%2B" },
-            { title: "WSL Ubuntu", desc: "Làm việc với Terminal & Ubuntu", price: "19.297 vnd", image: "https://via.placeholder.com/200x120/FF4500/FFFFFF?text=WSL+Ubuntu" },
-            { title: "Node & ExpressJS", desc: "Node & ExpressJS", price: "324.297 vnd", image: "https://via.placeholder.com/200x120/008000/FFFFFF?text=Node.js" },
-            { title: "Ngôn ngữ Sass", desc: "Responsive với Grid System", price: "32.297 vnd", image: "https://via.placeholder.com/200x120/FF69B4/FFFFFF?text=Sass" },
-            { title: "HTML, CSS Pro", desc: "Cho người mới bắt đầu", price: "13.297 vnd", image: "https://via.placeholder.com/200x120/0000FF/FFFFFF?text=HTML+CSS" },
-            { title: "JavaScript Pro", desc: "Cho người mới bắt đầu", price: "193.297 vnd", image: "https://via.placeholder.com/200x120/FFD700/000000?text=JavaScript" },
-            { title: "Từ cơ bản đến nâng cao", desc: "Lập trình C++", price: "20.000 vnd", image: "https://via.placeholder.com/200x120/00FFFF/000000?text=C%2B%2B" },
-            { title: "WSL Ubuntu", desc: "Làm việc với Terminal & Ubuntu", price: "19.297 vnd", image: "https://via.placeholder.com/200x120/FF4500/FFFFFF?text=WSL+Ubuntu" },
-            { title: "Node & ExpressJS", desc: "Node & ExpressJS", price: "324.297 vnd", image: "https://via.placeholder.com/200x120/008000/FFFFFF?text=Node.js" },
-            { title: "Ngôn ngữ Sass", desc: "Responsive với Grid System", price: "32.297 vnd", image: "https://via.placeholder.com/200x120/FF69B4/FFFFFF?text=Sass" },
-            { title: "HTML, CSS Pro", desc: "Cho người mới bắt đầu", price: "13.297 vnd", image: "https://via.placeholder.com/200x120/0000FF/FFFFFF?text=HTML+CSS" },
-            { title: "JavaScript Pro", desc: "Cho người mới bắt đầu", price: "193.297 vnd", image: "https://via.placeholder.com/200x120/FFD700/000000?text=JavaScript" },
-            { title: "Từ cơ bản đến nâng cao", desc: "Lập trình C++", price: "20.000 vnd", image: "https://via.placeholder.com/200x120/00FFFF/000000?text=C%2B%2B" },
-            { title: "WSL Ubuntu", desc: "Làm việc với Terminal & Ubuntu", price: "19.297 vnd", image: "https://via.placeholder.com/200x120/FF4500/FFFFFF?text=WSL+Ubuntu" },
-            { title: "Node & ExpressJS", desc: "Node & ExpressJS", price: "324.297 vnd", image: "https://via.placeholder.com/200x120/008000/FFFFFF?text=Node.js" },
-            { title: "Ngôn ngữ Sass", desc: "Responsive với Grid System", price: "32.297 vnd", image: "https://via.placeholder.com/200x120/FF69B4/FFFFFF?text=Sass" }
-            
-            
-            
-      
-        ];
-
-        function renderCourses() {
-            const courseList = document.getElementById("course-list");
-            courses.forEach(course => {
-                const courseCard = document.createElement("div");
-                courseCard.classList.add("course-card");
-                
-                courseCard.innerHTML = `
-                    <div class="course-image" style="background-image: url('${course.image}');"></div>
-                    <div class="course-content">
-                        <div class="course-title">${course.title}</div>
-                        <div class="course-desc">${course.desc}</div>
-                        <div class="course-price">${course.price}</div>
-                    </div>
-                `;
-
-                courseList.appendChild(courseCard);
-            });
-        }
-
-        renderCourses();
-    </script>
-
-</div>
-
-
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
-    body {
-        background-color: #f5f5f5;
-    }
-
-    .footer {
-        background-color: #181818;
-        color: white;
-        padding: 40px 10%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .footer-column {
-        width: 22%;
-        min-width: 180px;
-    }
-
-    .footer h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .footer ul {
-        list-style: none;
-    }
-
-    .footer ul li {
-        margin: 5px 0;
-    }
-
-    .footer ul li a {
-        color: #b3b3b3;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .footer ul li a:hover {
-        color: white;
-    }
-
-    .footer .app-links img {
-        width: 130px;
-        margin-top: 10px;
-    }
-
-    .social-icons {
-        margin-top: 10px;
-    }
-
-    .social-icons a {
-        margin-right: 10px;
-        display: inline-block;
-    }
-
-    .social-icons img {
-        width: 28px;
-    }
-
-    @media (max-width: 768px) {
-        .footer {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .footer-column {
             width: 100%;
+            padding: 0 20px;
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+          color: #fff;
+        }
+        .featured-courses {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
-    }
-</style>
+        .course-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        .course-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+        .course-details {
+            padding: 20px;
+        }
+        .course-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .course-price {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #218838;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            padding: 50px 0 20px;
+            color: #fff;
+        }
+        .footer-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: #888;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .navbar-brand { font-size: 24px; }
+            .nav-link { margin: 5px 0; }
+            .btn-custom { width: 100%; margin-bottom: 10px; }
+        }
+    </style>
 </head>
 <body>
-
-<footer class="footer">
-    <div class="footer-column">
-        <h3>Company info</h3>
-        <ul>
-            <li><a href="#">About Temu</a></li>
-            <li><a href="#">Temu – Shop Like a Billionaire</a></li>
-            <li><a href="#">Affiliate & Influencer: Earn Commission</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Temu's Tree Planting Program</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-column">
-        <h3>Customer service</h3>
-        <ul>
-            <li><a href="#">Return and refund policy</a></li>
-            <li><a href="#">Intellectual property policy</a></li>
-            <li><a href="#">Shipping info</a></li>
-            <li><a href="#">Report suspicious activity</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-column">
-        <h3>Help</h3>
-        <ul>
-            <li><a href="#">Support center & FAQ</a></li>
-            <li><a href="#">Safety center</a></li>
-            <li><a href="#">Temu purchase protection</a></li>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Partner with Temu</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-column">
-        <h3>Download the Temu App</h3>
-        <div class="app-links">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Download_on_the_App_Store_Badge.svg/200px-Download_on_the_App_Store_Badge.svg.png" alt="App Store">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/200px-Google_Play_Store_badge_EN.svg.png" alt="Google Play">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">HỌC LẬP TRÌNH</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dskhoahoc.html">Khóa học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news.html">Tin tức</a>
+                    </li>
+                </ul>
+                <div class="ms-3">
+                    <span sec:authorize="isAuthenticated()">Xin chào<span th:text="${#authentication.name}"></span></span>
+                    <a th:href="@{/logout}" sec:authorize="isAuthenticated()" class="btn btn-custom ms-2">Đăng xuất</a>
+                    <a th:href="@{/login}" sec:authorize="!isAuthenticated()" class="btn btn-custom">Đăng nhập</a>
+                    <a th:href="@{/register}" sec:authorize="!isAuthenticated()" class="btn btn-outline ms-2">Đăng ký</a>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <h3>Connect with Temu</h3>
-        <div class="social-icons">
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Twitter_Logo_2023.svg" alt="Twitter"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_logo_%282013-2017%29.svg" alt="YouTube"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest"></a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up">HỌC LẬP TRÌNH ONLINE</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Khám phá hành trình trở thành lập trình viên chuyên nghiệp</p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <a href="/courses" class="btn btn-custom me-3">Bắt đầu ngay</a>
+                <a href="/news" class="btn btn-custom btn-outline">Tin tức lập trình</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
+    <!-- Featured Courses -->
+    <section class="featured-courses">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Khóa học nổi bật</h2>
+                <p>Khám phá các khóa học lập trình tốt nhất</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4" th:each="course : ${courses}" data-aos="fade-up" th:data-aos-delay="${courseStat.index * 200}">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img th:src="${course.thumbnailUrl}" alt="Course Thumbnail"
+                                 th:unless="${course.thumbnailUrl == null}"
+                                 src="https://images.unsplash.com/photo-1517248135467-2c7ed3ab7229?ixlib=rb-4.0.3">
+                        </div>
+                        <div class="course-details">
+                            <h3 class="course-title" th:text="${course.title}"></h3>
+                            <div class="course-price" th:text="${course.price == 0 ? 'Miễn phí' : course.price + ' VND'}"></div>
+                            <a th:href="@{/courses/{id}(id=${course.courseId})}" class="btn btn-custom">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-content">
+                        <h3 class="footer-title">Về chúng tôi</h3>
+                        <p>Học Lập trình Online - Nơi chắp cánh ước mơ lập trình viên với các khóa học chất lượng cao.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-content">
+                        <h3 class="footer-title">Liên kết nhanh</h3>
+                        <div class="footer-links">
+                            <a href="/courses">Khóa học</a>
+                            <a href="/news">Tin tức</a>
+                            <a href="/register">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-content">
+                        <h3 class="footer-title">Kết nối</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Học Lập trình Online. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-
 </html>

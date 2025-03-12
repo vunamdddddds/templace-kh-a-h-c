@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
 
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="flex flex-col items-center justify-center w-full h-full">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-96">
-            <h2 class="text-2xl font-bold text-center mb-4">Đăng nhập</h2>
-            <input  type="text" placeholder="Email " class="w-full p-2 mb-3 border border-gray-300 rounded-md">
-            <input  type="password" placeholder="Password" class="w-full p-2 mb-3 border border-gray-300 rounded-md">
-            <button class="w-full bg-orange-500 text-white p-2 rounded-md">Đăng nhập</button>
-            <p class="text-center text-sm text-gray-600 mt-3">Gặp vấn đề khi đăng nhập?</p>
-            <p class="text-center text-xs text-gray-500 mt-4">Bằng việc tiếp tục, bạn đồng ý với <a href="#" class="text-blue-500">Điều khoản sử dụng</a> và <a href="#" class="text-blue-500">Chính sách bảo mật</a>.</p>
-        </div>
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center; /* Căn giữa nội dung */
+        }
+
+        .logo {
+            max-width: 50px; /* Kích thước tối đa của logo */
+            margin-bottom: 20px; /* Khoảng cách dưới logo */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #258e01;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left; /* Căn trái cho các label và input */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #258e01;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #258e01;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="/img/Annotation 2025-03-05 171514.png" alt="Logo" class="logo">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>You don't have an account? <a href="/register.html">Register</a></p>
     </div>
 </body>
 </html>
